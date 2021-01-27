@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14903" systemVersion="18G103" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Plan" representedClassName="Plan" syncable="YES">
+        <attribute name="planDescription" optional="YES" attributeType="String"/>
+        <attribute name="planImage" optional="YES" attributeType="Binary"/>
+        <attribute name="planName" optional="YES" attributeType="String"/>
+        <attribute name="planType" optional="YES" attributeType="String"/>
+        <relationship name="tasks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Task" inverseName="plan" inverseEntity="Task"/>
+    </entity>
+    <entity name="Task" representedClassName="Task" syncable="YES">
+        <attribute name="dueDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="taskDescription" optional="YES" attributeType="String"/>
+        <attribute name="taskImage" optional="YES" attributeType="Binary"/>
+        <attribute name="taskPriority" optional="YES" attributeType="String"/>
+        <attribute name="taskProgress" optional="YES" attributeType="String"/>
+        <attribute name="taskTitle" optional="YES" attributeType="String"/>
+        <relationship name="plan" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Plan" inverseName="tasks" inverseEntity="Plan"/>
+    </entity>
+    <elements>
+        <element name="Task" positionX="-421.734375" positionY="-78.16015625" width="128" height="163"/>
+        <element name="Plan" positionX="-646.1796875" positionY="-78.73046875" width="128" height="118"/>
+    </elements>
+</model>
